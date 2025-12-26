@@ -1,0 +1,20 @@
+model Model
+	culture: en-MY
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-MY
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Songs"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Songs
+ref table DateTableTemplate_3e465304-daed-473f-bef2-675fad779ad7
+ref table LocalDateTable_b26f5d72-48ee-45e6-9285-3c99db4f5204
+
+ref cultureInfo en-MY
+

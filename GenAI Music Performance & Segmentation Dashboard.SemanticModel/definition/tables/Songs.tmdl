@@ -1,0 +1,242 @@
+table Songs
+	lineageTag: e644ff4d-c13d-4bfd-9284-3e47f1263c19
+
+	column 'Song ID'
+		dataType: string
+		lineageTag: 2135f975-b2bc-4902-b183-d729c5cc7d9d
+		summarizeBy: none
+		sourceColumn: Song ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Song Title'
+		dataType: string
+		lineageTag: 032f0e0d-ac37-4c9e-89c7-dfbafd675d40
+		summarizeBy: none
+		sourceColumn: Song Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Artist
+		dataType: string
+		lineageTag: 9c419643-ac29-47d0-8ecb-a3682854a139
+		summarizeBy: none
+		sourceColumn: Artist
+
+		annotation SummarizationSetBy = Automatic
+
+	column Album
+		dataType: string
+		lineageTag: 79d16562-ea6b-42a2-a79d-a9fdc684fb29
+		summarizeBy: none
+		sourceColumn: Album
+
+		annotation SummarizationSetBy = Automatic
+
+	column Genre
+		dataType: string
+		lineageTag: c47dfd6d-3488-4f0b-abb5-539eb6caa580
+		summarizeBy: none
+		sourceColumn: Genre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Release Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4eaad052-84a0-4be8-bf00-2774eda41996
+		summarizeBy: none
+		sourceColumn: Release Date
+
+		variation Variation
+			isDefault
+			relationship: f2d95732-af3a-48b6-b335-0631c63ce334
+			defaultHierarchy: LocalDateTable_b26f5d72-48ee-45e6-9285-3c99db4f5204.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Total Duration'
+		dataType: double
+		lineageTag: 4baf326b-d416-4c79-8a46-9e9c50b91248
+		summarizeBy: sum
+		sourceColumn: Total Duration
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Duration Minutes'
+		dataType: int64
+		formatString: 0
+		lineageTag: 04c41a9c-0b95-4a29-b4d5-18245a9292d7
+		summarizeBy: sum
+		sourceColumn: Duration Minutes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Remainder Duration Seconds'
+		dataType: int64
+		formatString: 0
+		lineageTag: 333b8008-b567-4d96-a9a9-4df9df5e095c
+		summarizeBy: sum
+		sourceColumn: Remainder Duration Seconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Popularity Rating'
+		dataType: int64
+		formatString: 0
+		lineageTag: 66448d6b-9312-49f0-a8e7-9c5409b2ce07
+		summarizeBy: sum
+		sourceColumn: Popularity Rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Popularity Category'
+		dataType: string
+		lineageTag: e8a4e4c8-eca7-4fb9-b5de-efb3f9590e73
+		summarizeBy: none
+		sourceColumn: Popularity Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Streams'
+		dataType: int64
+		formatString: 0
+		lineageTag: 16814225-15b7-4f94-945d-7d4ad01bf038
+		summarizeBy: sum
+		sourceColumn: Number of Streams
+
+		annotation SummarizationSetBy = Automatic
+
+	column Language
+		dataType: string
+		lineageTag: 4ce99a97-a7fc-4e26-b082-45a9df9eb4c4
+		summarizeBy: none
+		sourceColumn: Language
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Language Group'
+		dataType: string
+		lineageTag: 970846f1-575d-4816-b0bd-53e918f50e81
+		summarizeBy: none
+		sourceColumn: Language Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Explicit Content'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 160a7535-5abe-4dde-9538-0edbdda0dcb2
+		summarizeBy: none
+		sourceColumn: Explicit Content
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Record Label'
+		dataType: string
+		lineageTag: 152870aa-09df-4dc2-ad14-8835553d498e
+		summarizeBy: none
+		sourceColumn: Record Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Record Label Independence'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 32adb39c-72ea-4f46-af6b-195efe13cc89
+		summarizeBy: none
+		sourceColumn: Record Label Independence
+
+		annotation SummarizationSetBy = Automatic
+
+	column Composer
+		dataType: string
+		lineageTag: 064d82cf-7322-4de4-8aab-62a5af0c48be
+		summarizeBy: none
+		sourceColumn: Composer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Producer
+		dataType: string
+		lineageTag: 079a153a-b49f-4605-a3a6-6c14bb8ff901
+		summarizeBy: none
+		sourceColumn: Producer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Collaboration with Artist'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ac948f4c-fd06-4ba6-b88a-96faeac4b524
+		summarizeBy: none
+		sourceColumn: Collaboration with Artist
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Collaborating Artist'
+		dataType: string
+		lineageTag: d0773739-16f6-4f24-a30a-d65a2b123884
+		summarizeBy: none
+		sourceColumn: Collaborating Artist
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Songs = m
+		mode: import
+		source =
+				let
+				    Source = SharePoint.Files("https://365umedumy.sharepoint.com/sites/wih3003group1groupassignment", [ApiVersion = 15]),
+				    #"spotify_songs_dataset csv_https://365umedumy sharepoint com/sites/wih3003group1groupassignment/Shared Documents/" = Source{[Name="spotify_songs_dataset.csv",#"Folder Path"="https://365umedumy.sharepoint.com/sites/wih3003group1groupassignment/Shared Documents/"]}[Content],
+				    #"Imported CSV" = Csv.Document(#"spotify_songs_dataset csv_https://365umedumy sharepoint com/sites/wih3003group1groupassignment/Shared Documents/",[Delimiter=",", Columns=15, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Imported CSV", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"song_id", type text}, {"song_title", type text}, {"artist", type text}, {"album", type text}, {"genre", type text}, {"release_date", type date}, {"duration", Int64.Type}, {"popularity", Int64.Type}, {"stream", Int64.Type}, {"language", type text}, {"explicit_content", type text}, {"label", type text}, {"composer", type text}, {"producer", type text}, {"collaboration", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"song_id", "Song ID"}, {"song_title", "Song Title"}, {"artist", "Artist"}, {"album", "Album"}, {"genre", "Genre"}, {"release_date", "Release Date"}, {"duration", "Duration"}, {"popularity", "Popularity"}, {"stream", "Number of Streams"}, {"language", "Language"}, {"explicit_content", "Explicit Content"}, {"label", "Record Label"}, {"composer", "Composer"}, {"producer", "Producer"}, {"collaboration", "Collaborating Artist"}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Renamed Columns",{{"Song Title", Text.Clean, type text}}),
+				    #"Extracted Text Before Delimiter" = Table.TransformColumns(#"Cleaned Text", {{"Song Title", each Text.BeforeDelimiter(_, "."), type text}}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Extracted Text Before Delimiter",{{"Song Title", Text.Proper, type text}}),
+				    #"Extracted Text Before Delimiter1" = Table.TransformColumns(#"Capitalized Each Word", {{"Album", each Text.BeforeDelimiter(_, "."), type text}}),
+				    #"Capitalized Each Word1" = Table.TransformColumns(#"Extracted Text Before Delimiter1",{{"Album", Text.Proper, type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Capitalized Each Word1",null,240,Replacer.ReplaceValue,{"Duration"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","","English",Replacer.ReplaceValue,{"Language"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","No","False",Replacer.ReplaceText,{"Explicit Content"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","Yes","True",Replacer.ReplaceText,{"Explicit Content"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value3",{{"Explicit Content", type logical}}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Changed Type1","Indie","Independent",Replacer.ReplaceText,{"Record Label"}),
+				    #"Added Custom" = Table.AddColumn(#"Replaced Value4", "DurationMinutes", each [Duration] / 60),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Added Custom", "DurationMinutes", "DurationMinutes - Copy"),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Duplicated Column",{{"DurationMinutes - Copy", "DurationSeconds"}}),
+				    #"Extracted Text After Delimiter" = Table.TransformColumns(#"Renamed Columns1", {{"DurationSeconds", each Text.AfterDelimiter(Text.From(_, "en-MY"), "."), type text}}),
+				    #"Added Prefix" = Table.TransformColumns(#"Extracted Text After Delimiter", {{"DurationSeconds", each "0." & _, type text}}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Prefix",{{"DurationSeconds", type number}}),
+				    #"Added Custom1" = Table.AddColumn(#"Changed Type2", "DurationSec", each [DurationSeconds] * 60),
+				    #"Rounded Off" = Table.TransformColumns(#"Added Custom1",{{"DurationSec", each Number.Round(_, 1), type number}}),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Rounded Off",{{"DurationSec", Int64.Type}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Changed Type3",{"Song ID", "Song Title", "Artist", "Album", "Genre", "Release Date", "Duration", "DurationMinutes", "DurationSec", "Popularity", "Number of Streams", "Language", "Explicit Content", "Record Label", "Composer", "Producer", "Collaborating Artist", "DurationSeconds"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Reordered Columns",{"DurationSeconds"}),
+				    #"Extracted Text Before Delimiter2" = Table.TransformColumns(#"Removed Columns", {{"DurationMinutes", each Text.BeforeDelimiter(Text.From(_, "en-MY"), "."), type text}}),
+				    #"Changed Type4" = Table.TransformColumnTypes(#"Extracted Text Before Delimiter2",{{"DurationMinutes", Int64.Type}}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Changed Type4",{{"DurationMinutes", "Duration Minutes"}, {"DurationSec", "Remainder Duration Seconds"}, {"Duration", "Total Duration"}, {"Popularity", "Popularity Rating"}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Renamed Columns2", "Popularity Category", each if [Popularity Rating] < 15 then "Under the Radar" else if [Popularity Rating] < 25 then "Rising" else if [Popularity Rating] < 50 then "Growing" else if [Popularity Rating] < 75 then "Buzzing" else if [Popularity Rating] < 90 then "Hot" else "Global"),
+				    #"Reordered Columns1" = Table.ReorderColumns(#"Added Conditional Column",{"Song ID", "Song Title", "Artist", "Album", "Genre", "Release Date", "Total Duration", "Duration Minutes", "Remainder Duration Seconds", "Popularity Rating", "Popularity Category", "Number of Streams", "Language", "Explicit Content", "Record Label", "Composer", "Producer", "Collaborating Artist"}),
+				    #"Changed Type5" = Table.TransformColumnTypes(#"Reordered Columns1",{{"Popularity Category", type text}}),
+				    #"Added Conditional Column1" = Table.AddColumn(#"Changed Type5", "Language Group", each if Text.Contains([Language], "French") then "Continental European" else if Text.Contains([Language], "German") then "Continental European" else if Text.Contains([Language], "Italian") then "Continental European" else if Text.Contains([Language], "Spanish") then "Continental European" else if Text.Contains([Language], "Japanese") then "Asian" else if Text.Contains([Language], "Korean") then "Asian" else "Global Western"),
+				    #"Reordered Columns2" = Table.ReorderColumns(#"Added Conditional Column1",{"Song ID", "Song Title", "Artist", "Album", "Genre", "Release Date", "Total Duration", "Duration Minutes", "Remainder Duration Seconds", "Popularity Rating", "Popularity Category", "Number of Streams", "Language", "Language Group", "Explicit Content", "Record Label", "Composer", "Producer", "Collaborating Artist"}),
+				    #"Added Conditional Column2" = Table.AddColumn(#"Reordered Columns2", "Record Label Independence", each if Text.Contains([Record Label], "Independent") then true else false),
+				    #"Reordered Columns3" = Table.ReorderColumns(#"Added Conditional Column2",{"Song ID", "Song Title", "Artist", "Album", "Genre", "Release Date", "Total Duration", "Duration Minutes", "Remainder Duration Seconds", "Popularity Rating", "Popularity Category", "Number of Streams", "Language", "Language Group", "Explicit Content", "Record Label", "Record Label Independence", "Composer", "Producer", "Collaborating Artist"}),
+				    #"Changed Type6" = Table.TransformColumnTypes(#"Reordered Columns3",{{"Record Label Independence", type logical}}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Changed Type6","","None",Replacer.ReplaceValue,{"Collaborating Artist"}),
+				    #"Added Conditional Column3" = Table.AddColumn(#"Replaced Value5", "Collaboration with Artist", each if Text.Contains([Collaborating Artist], "None") then false else true),
+				    #"Reordered Columns4" = Table.ReorderColumns(#"Added Conditional Column3",{"Song ID", "Song Title", "Artist", "Album", "Genre", "Release Date", "Total Duration", "Duration Minutes", "Remainder Duration Seconds", "Popularity Rating", "Popularity Category", "Number of Streams", "Language", "Language Group", "Explicit Content", "Record Label", "Record Label Independence", "Composer", "Producer", "Collaboration with Artist", "Collaborating Artist"}),
+				    #"Changed Type7" = Table.TransformColumnTypes(#"Reordered Columns4",{{"Collaboration with Artist", type logical}})
+				in
+				    #"Changed Type7"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

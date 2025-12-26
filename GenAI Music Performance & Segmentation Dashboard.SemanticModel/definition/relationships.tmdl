@@ -1,0 +1,5 @@
+relationship f2d95732-af3a-48b6-b335-0631c63ce334
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Songs.'Release Date'
+	toColumn: LocalDateTable_b26f5d72-48ee-45e6-9285-3c99db4f5204.Date
+
